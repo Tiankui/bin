@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 #coding = utf-8
 require "mechanize"
+require "timer"
 #time = Time.new + 60*60*24*15
 #puts time if time.wday != 5
 

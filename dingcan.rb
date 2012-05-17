@@ -2,7 +2,6 @@
 #coding=utf-8
 require "mechanize"
 
-
 M = Mechanize
 
 def prompt
