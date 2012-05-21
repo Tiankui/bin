@@ -29,7 +29,7 @@ class DingFan
     end
   end
 end
-spider = DingFan.new
-Timer.every_n_seconds(60*60) do
+Timer.every_n_seconds(60*60*3) do
+  spider = DingFan.new
   spider.action
 end

@@ -39,5 +39,4 @@ Timer.every_n_seconds(10){
     #puts a.day
     Shipin.new("#{a.year}-#{a.month}-#{a.day}","h1=15&m1=17","h2=19&m2=30").book_room
   }
- }
-
+}
