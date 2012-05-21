@@ -1,6 +1,8 @@
 #!/usr/bin/env ruby
 #coding = utf-8
 require "mechanize"
+require "./timer"
+require "./check_day"
 #time = Time.new + 60*60*24*15
 #puts time if time.wday != 5
 
@@ -30,5 +32,12 @@ class Shipin
   end
 end
 
+Timer.every_n_seconds(10){
+  CheckDay.find_day {|a|
+    #puts a.year
+    #puts a.month
+    #puts a.day
+    Shipin.new("#{a.year}-#{a.month}-#{a.day}","h1=15&m1=17","h2=19&m2=30").book_room
+  }
+ }
 
-Shipin.new("2012-05-09","h1=18&m1=00","h2=19&m2=30").book_room
