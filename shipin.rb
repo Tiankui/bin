@@ -32,7 +32,7 @@ class Shipin
   end
 end
 
-Timer.every_n_seconds(10){
+Timer.every_n_seconds(60){
   CheckDay.find_day {|a|
     #puts a.year
     #puts a.month
