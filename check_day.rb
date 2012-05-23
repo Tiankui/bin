@@ -6,11 +6,11 @@
 module CheckDay
   def self.find_day
     now = Time.new
-    book_time = now + 60*60*24*16
+    book_time = now + 60*60*24*15
     if book_time.wday == 5
       yield book_time
     else
-      p '16天后是星期#{book_time.wday}'
+      p "15天后是星期#{book_time.wday}"
     end
   end
 end
