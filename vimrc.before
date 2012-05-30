@@ -1,0 +1,56 @@
+filetype plugin on
+
+set guifont=Menlo-Bold:h12
+set fileencodings=utf-8,gb18030,ucs-bom,GBK,big5,cp936
+map <silent> <leader>r :NERDTree /Users/eric/.rvm/gems/ruby-1.9.3-p125/gems<cr>
+map <silent> <leader>j :NERDTree /Users/eric/github/jquery<cr>
+map <silent> <leader>k :NERDTree /Users/eric/github/kissy<cr>
+map <silent> <leader>s :NERDTree /Users/eric/.vim/janus/vim/tools/snipmate-snippets<cr>
+
+autocmd! bufwritepost .vimrc source ~/.vimrc
+map <silent> <leader>ee :e ~/.vimrc.before<cr>
+map <silent> <leader>ss :source ~/.vimrc.before<cr>
+
+" {{{ 开始折叠
+set foldenable
+" 设置语法折叠
+" manual  手工定义折叠
+" indent  更多的缩进表示更高级别的折叠
+" expr    用表达式来定义折叠
+" syntax  用语法高亮来定义折叠
+" diff    对没有更改的文本进行折叠
+" marker  对文中的标志折叠
+set foldmethod=indent
+"折叠相关的快捷键
+"zR 打开所有的折叠
+"za Open/Close (toggle) a folded group of lines.
+"zA Open a Closed fold or close and open fold recursively.
+"zi 全部 展开/关闭 折叠
+"zo 打开 (open) 在光标下的折叠
+"zc 关闭 (close) 在光标下的折叠
+"zC 循环关闭 (Close) 在光标下的所有折叠
+"zM 关闭所有可折叠区域
+" 设置折叠区域的宽度
+set foldcolumn=0
+" 设置折叠层数为
+setlocal foldlevel=1
+" 新建的文件，刚打开的文件不折叠
+autocmd! BufNewFile,BufRead * setlocal nofoldenable
+" }}}
+
+if has("gui_running")
+    set guioptions-=m " 隐藏菜单栏
+    set guioptions-=T " 隐藏工具栏
+    set guioptions-=L " 隐藏左侧滚动条
+    set guioptions-=r " 隐藏右侧滚动条
+    set guioptions-=b " 隐藏底部滚动条
+    set showtabline=0 " 隐藏Tab栏
+endif
+
+
+" 插入模式下上下左右移动光标
+inoremap <c-h> <left>
+inoremap <c-l> <right>
+inoremap <c-j> <c-o>gj
+inoremap <c-k> <c-o>gk
+set fileencodings=utf-8,gb18030,ucs-bom,GBK,big5,cp936
