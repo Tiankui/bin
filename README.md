@@ -1,1 +1,1 @@
-# dotfile bin的备份
+# dotfile/bin backup
