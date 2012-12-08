@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+# coding: utf-8
+# 修改文件名，替换空格为下划线
+
+a = `find /Users/Yun/Documents/book -name '*.pdf'`
+
+books = a.split(/\n/)
+
+books.each do |c|
+  if c.include? ' '
+    d = c.gsub(' ','\ ')
+    `mv #{d} #{c.gsub(' ','_')}`
+  end
+end
